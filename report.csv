@@ -1,0 +1,2 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+timeStamp,elapsed,HTTP Request,503,Service Unavailable,Reqres_Swagger 1-105,text,FALSE,,1115,259,52,52,https://reqres.in/api/users/register,1035,0,511

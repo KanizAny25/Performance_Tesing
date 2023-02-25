@@ -1,0 +1,372 @@
+{
+	"info": {
+		"_postman_id": "8bf9619f-5c41-40c4-9e4b-e88e8603bbc2",
+		"name": "Reqres_Swagger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26015162"
+	},
+	"item": [
+		{
+			"name": "resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"data\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"page\": 2,\r",
+							"    \"per_page\": 6,\r",
+							"    \"total\": 12,\r",
+							"    \"total_pages\": 2,\r",
+							"    \"data\": [\r",
+							"        {\r",
+							"            \"id\": 7,\r",
+							"            \"name\": \"sand dollar\",\r",
+							"            \"year\": 2006,\r",
+							"            \"color\": \"#DECDBE\",\r",
+							"            \"pantone_value\": \"13-1106\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 8,\r",
+							"            \"name\": \"chili pepper\",\r",
+							"            \"year\": 2007,\r",
+							"            \"color\": \"#9B1B30\",\r",
+							"            \"pantone_value\": \"19-1557\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 9,\r",
+							"            \"name\": \"blue iris\",\r",
+							"            \"year\": 2008,\r",
+							"            \"color\": \"#5A5B9F\",\r",
+							"            \"pantone_value\": \"18-3943\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 10,\r",
+							"            \"name\": \"mimosa\",\r",
+							"            \"year\": 2009,\r",
+							"            \"color\": \"#F0C05A\",\r",
+							"            \"pantone_value\": \"14-0848\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 11,\r",
+							"            \"name\": \"turquoise\",\r",
+							"            \"year\": 2010,\r",
+							"            \"color\": \"#45B5AA\",\r",
+							"            \"pantone_value\": \"15-5519\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 12,\r",
+							"            \"name\": \"honeysuckle\",\r",
+							"            \"year\": 2011,\r",
+							"            \"color\": \"#D94F70\",\r",
+							"            \"pantone_value\": \"18-2120\"\r",
+							"        }\r",
+							"    ],\r",
+							"    \"support\": {\r",
+							"        \"url\": \"https://reqres.in/#support-heading\",\r",
+							"        \"text\": \"To keep ReqRes free, contributions towards server costs are appreciated!\"\r",
+							"    }\r",
+							"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/resource?page=2&per_page=6",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"resource"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "per_page",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2&per_page=6",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "per_page",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users/?id=3",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users/id",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"id"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": "https://reqres.in/api/users/id"
+			},
+			"response": []
+		},
+		{
+			"name": "users/id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://reqres.in/api/users/id"
+			},
+			"response": []
+		},
+		{
+			"name": "resource/id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Resqres_Url}}/resouce/id?id=6",
+					"host": [
+						"{{Resqres_Url}}"
+					],
+					"path": [
+						"resouce",
+						"id"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resource/id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "https://reqres.in/api/resouce/id"
+			},
+			"response": []
+		},
+		{
+			"name": "resource/id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": "https://reqres.in/api/resouce/id"
+			},
+			"response": []
+		},
+		{
+			"name": "resource/id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://reqres.in/api/resouce/id"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"cerulean\",\r\n  \"email\": \"any@gmail.com\",\r\n  \"password\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/login"
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"cerulean\",\r\n  \"email\": \"any@gmail.com\",\r\n  \"password\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/users/register"
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://reqres.in/api/logout"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Resqres_Url",
+			"value": "https://reqres.in/api"
+		}
+	]
+}
